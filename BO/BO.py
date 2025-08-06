@@ -111,36 +111,3 @@ def run_BO(
     new_x = optimize_qnehvi_and_get_observation(problem, model, train_x, sampler)
     return new_x
 
-
-# if __name__=='__main__':
-#     import pandas as pd
-    
-#     hyper_parameters = {
-#         "ink_concentration": (2.2, 4.2),
-#         "spin_speed": (0, 5599),
-#         "spin_time": (0, 114),
-#         "spin_acceleration": (0, 29499),
-#     }
-#     prob_dim = len(hyper_parameters)
-#     n_samples = 10
-
-
-#     bounds = torch.empty((2, prob_dim)).float()
-#     for i, (low, up) in enumerate(hyper_parameters.values()):
-#         bounds[0, i] = low
-#         bounds[1, i] = up
-        
-#     samples = draw_sobol_samples(bounds=bounds, n=n_samples, q=1).squeeze(1)
-
-#     table = dict()
-#     for sample_idx, sample in enumerate(samples):
-#         sample_dict = {**dict(zip(list(hyper_parameters.keys()), sample))}
-#         sample_dict["ink_concentration"] = closest_to(sample_dict["ink_concentration"].item())
-#         sample_dict["spin_speed"] = 500 + 100*(sample_dict["spin_speed"].item()//100)
-#         sample_dict["spin_time"] = 10 + 5*(sample_dict["spin_time"].item()//5)
-#         sample_dict["spin_acceleration"] = 1000 + 500*(sample_dict["spin_acceleration"].item()//500)
-#         table[int(2*sample_idx)] = sample_dict
-#         table[int(2*sample_idx + 1)] = sample_dict
-
-#     df = pd.DataFrame.from_dict(table, orient='index')
-    # df.to_csv('./FLAIM_samples_database.csv')
