@@ -1,0 +1,12 @@
+name: sdl_electro
+channels:
+  - defaults
+dependencies:
+  - scikit-image
+  - conda-forge::opencv
+  - matplotlib
+  - pandas
+  - openpyxl
+  - botorch
+  - seaborn
+  - pysr
