@@ -4,7 +4,7 @@ Repository for the code for the paper "A self-driving lab for solution-processed
 
 ## Requirements
 
-sdl_electro.yaml
+conda environment in [sdl_electro.yaml](sdl_electro.yaml).
 
 ## Data
 
